@@ -76,7 +76,7 @@ exports.login = async (req, res) => {
       });
     }
 
-    // 🔐 VERIFICACIÓN DE JWT_SECRET
+  
     if (!process.env.JWT_SECRET) {
       console.error('JWT_SECRET no definido');
       return res.status(500).json({
@@ -99,4 +99,5 @@ exports.login = async (req, res) => {
     });
   }
 };
+
 
