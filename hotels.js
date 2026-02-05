@@ -1,16 +1,16 @@
-// 🔒 proteger página
+
 const token = localStorage.getItem('token');
 if (!token) {
   window.location.href = 'login.html';
 }
 
-// 🚪 logout
+
 document.getElementById('logout').addEventListener('click', () => {
   localStorage.removeItem('token');
   window.location.href = 'login.html';
 });
 
-// 🏨 cargar hoteles
+
 async function loadHotels() {
   const res = await fetch('/api/hotels');
   const hotels = await res.json();
@@ -44,7 +44,7 @@ async function loadHotels() {
   });
 }
 
-// 📅 reservar hotel con fechas
+
 async function reserveHotel(hotelId, hotelName) {
   const startDate = prompt(`Fecha de entrada para ${hotelName} (YYYY-MM-DD)`);
   if (!startDate) return;
@@ -80,5 +80,6 @@ async function reserveHotel(hotelId, hotelName) {
   }
 }
 
-// 🚀 iniciar
+
 loadHotels();
+
