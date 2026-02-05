@@ -45,7 +45,7 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // 🔐 VALIDACIÓN CLAVE (esto te faltaba)
+   
     if (!email || !password) {
       return res.status(400).json({
         message: 'Email y contraseña son obligatorios'
@@ -99,3 +99,4 @@ exports.login = async (req, res) => {
     });
   }
 };
+
